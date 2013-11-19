@@ -201,7 +201,7 @@ bool HelloWorld::init()
     
     // author info
     {
-        CCLabelTTF* pLabel = CCLabelTTF::create("by yang chao (wantnon) 2013-11-16", "Arial", 30);
+        CCLabelTTF* pLabel = CCLabelTTF::create("by yang chao (wantnon) 2013-11-19", "Arial", 30);
         pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
                                 origin.y + visibleSize.height - pLabel->getContentSize().height-60));
         uiRoot->addChild(pLabel, 1);
@@ -210,7 +210,7 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
  
-    CCLabelTTF* pLabel = CCLabelTTF::create("2D SpotLight Demo", "Arial", 45);
+    CCLabelTTF* pLabel = CCLabelTTF::create("2D SpotLight with particle (use mask)", "Arial", 45);
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,

@@ -13,6 +13,7 @@ public:
     CmaskedSceneSprite(){
         CCSize winSize=CCDirector::sharedDirector()->getWinSize();
         c=CCPoint(winSize.width/2,winSize.height/2);
+        maskBaseBrightness=0.5;
         
     }
     virtual ~CmaskedSceneSprite(){
@@ -23,6 +24,7 @@ public:
     CGLProgramWithMyUnifos program;
     CCPoint c;
     CCTexture2D*maskTex;
+    float maskBaseBrightness;
     
     
 };

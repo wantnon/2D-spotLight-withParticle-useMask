@@ -24,6 +24,7 @@ bool CmaskedSceneSprite::init(CCTexture2D *texture,string maskTexFileName){
         myUnifoMap["maskTexSize"] = glGetUniformLocation(pProgram->getProgram(),"maskTexSize");
         myUnifoMap["c"] = glGetUniformLocation(pProgram->getProgram(),"c");
         myUnifoMap["maskTex"] = glGetUniformLocation(pProgram->getProgram(),"maskTex");
+        myUnifoMap["maskBaseBrightness"] = glGetUniformLocation(pProgram->getProgram(),"maskBaseBrightness");
         //make program
         program.myUnifoMap=myUnifoMap;
         program.setProgram(pProgram);
@@ -54,6 +55,7 @@ void CmaskedSceneSprite::draw(){
     glUniform2fv(program.myUnifoMap["maskTexSize"],1,maskTexSize_c);
     float c_c[2]={c.x,c.y};
     glUniform2fv(program.myUnifoMap["c"], 1, c_c);
+    glUniform1f(program.myUnifoMap["maskBaseBrightness"], maskBaseBrightness);
     //pass texture attach point id to sampler uniform
     glUniform1i(program.myUnifoMap["maskTex"],1);
     //attach texture to texture attach point
